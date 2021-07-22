@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import Navbar from "../components/Navbar";
 import Article from "../components/Article";
+import { Link } from "react-router-dom";
 import { QuotesContext } from "../context/QuotesContext";
-import { CContainer } from "@coreui/react";
+import { CContainer, CButton } from "@coreui/react";
 
 const Home = () => {
   const { state } = useContext(QuotesContext);
@@ -10,6 +11,13 @@ const Home = () => {
     <>
       <Navbar />
       <hr />
+      <CContainer>
+        <Link to="/quote">
+          <CButton color="secondary" variant="ghost">
+            New Quote
+          </CButton>
+        </Link>
+      </CContainer>
       <CContainer>
         {state.quotes.map((quote) => (
           <Article key={quote.id} {...quote} />

@@ -10,7 +10,7 @@ import {
 import moment from "moment";
 import { Article as Main } from "../styles/components/Article";
 import { subString } from "../utils"
-const Article = ({username,quotes,likes,createAt}) => {
+const Article = ({username,quote,likes,createAt}) => {
   return (
     <>
       <Main>
@@ -23,7 +23,7 @@ const Article = ({username,quotes,likes,createAt}) => {
               {username}
             </CCardSubtitle>
             <CCardText>
-              {quotes}
+              {quote}
             </CCardText>
             Likes {likes}<br />
             <strong>{moment(createAt).startOf('minutes').fromNow()}</strong>
